@@ -1,14 +1,21 @@
 package com.didispace.controller;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * Created by xjx on 2018/11/27.
  */
+//此注解用于动态加载配置中心内容，如果没有此注解，
+//即使执行http://localhost:7002/refresh刷新后，请求的配置文件也不会改变
+@RefreshScope
 @RestController
 public class TestController {
 
@@ -35,4 +42,5 @@ public class TestController {
     public String neoHello(){
         return env.getProperty("hello","undefined");
     }
+
 }
