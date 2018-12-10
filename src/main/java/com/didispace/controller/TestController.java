@@ -28,6 +28,26 @@ public class TestController {
     @Autowired
     private Environment env;
 
+    @RequestMapping("/jdbcDriver")
+    public String jdbcDriver(){
+        return env.getProperty("jdbc.driver","undefined");
+    }
+
+    @RequestMapping("/jdbcUrl")
+    public String jdbcUrl(){
+        return env.getProperty("jdbc.url","undefined");
+    }
+
+    @RequestMapping("/jdbcUsername")
+    public String jdbcUsername(){
+        return env.getProperty("jdbc.username","undefined");
+    }
+
+    @RequestMapping("/jdbcPassword")
+    public String jdbcPassword(){
+        return env.getProperty("jdbc.password","undefined");
+    }
+
     @RequestMapping("/hello")
     public String hello(){
         return this.hello;
@@ -42,5 +62,7 @@ public class TestController {
     public String neoHello(){
         return env.getProperty("hello","undefined");
     }
+
+
 
 }
