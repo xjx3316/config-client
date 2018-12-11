@@ -11,6 +11,7 @@ import javax.sql.DataSource;
 /**
  * Created by xjx on 2018/12/10.
  */
+/*
 @Configuration
 public class JdbcController {
     @Value("${url}")
@@ -32,4 +33,4 @@ public class JdbcController {
         dds.setPassword(password);
         return dds;
     }
-}
+}*/
